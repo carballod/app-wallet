@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Wallet</string>
+    <string name="label_password">Contraseña</string>
+    <string name="label_forgot_password">¿Olvidaste tu contraseña?</string>
+    <string name="btn_login">Iniciar sesión</string>
+    <string name="label_register">¿No tenes cuenta? Registrate</string>
+    <string name="label_username">Usuario</string>
+</resources>
