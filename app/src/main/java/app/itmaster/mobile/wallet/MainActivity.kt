@@ -11,14 +11,21 @@ import kotlinx.coroutines.launch
 import app.itmaster.mobile.wallet.repository.AuthRepository
 
 class MainActivity : AppCompatActivity() {
+
+    private val authRepository = AuthRepository()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        if(isLoggedIn()) {
+            redirectToHomeActivity()
+            return
+        }
+
         val etUsername: EditText = findViewById(R.id.etUsername)
         val etPassword: EditText = findViewById(R.id.etPassword)
         val btnLogin: Button = findViewById(R.id.btnLogin)
-        val authRepository = AuthRepository()
+
 
         btnLogin.setOnClickListener {
             val username = etUsername.text.toString()
@@ -30,9 +37,8 @@ class MainActivity : AppCompatActivity() {
 
                     runOnUiThread {
                         if (isValid) {
-                            val intent = Intent(this@MainActivity, Home::class.java)
-                            startActivity(intent)
-                            finish()
+                            saveLoginState()
+                            redirectToHomeActivity()
                         } else {
                             Toast.makeText(
                                 this@MainActivity,
@@ -45,8 +51,25 @@ class MainActivity : AppCompatActivity() {
                     e.printStackTrace()
                 }
             }
-
         }
-
     }
+
+    private fun isLoggedIn(): Boolean {
+        val sharedPreferences = getSharedPreferences("loginPrefs", MODE_PRIVATE)
+        return sharedPreferences.getBoolean("isLoggedIn", false)
+    }
+
+    private fun saveLoginState() {
+        val sharedPreferences = getSharedPreferences("loginPrefs", MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
+        editor.putBoolean("isLoggedIn", true)
+        editor.apply()
+    }
+
+    private fun redirectToHomeActivity() {
+        val intent = Intent(this, Home::class.java)
+        startActivity(intent)
+        finish()
+    }
+
 }
