@@ -67,7 +67,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun redirectToHomeActivity() {
-        val intent = Intent(this, Home::class.java)
+        val intent = Intent(this, HomeActivity::class.java)
         startActivity(intent)
         finish()
     }
