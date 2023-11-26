@@ -10,12 +10,12 @@ import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import app.itmaster.mobile.wallet.repository.AuthRepository
 
-class MainActivity : AppCompatActivity() {
+class LoginActivity : AppCompatActivity() {
 
     private val authRepository = AuthRepository()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_login)
 
         if(isLoggedIn()) {
             redirectToHomeActivity()
@@ -41,7 +41,7 @@ class MainActivity : AppCompatActivity() {
                             redirectToHomeActivity()
                         } else {
                             Toast.makeText(
-                                this@MainActivity,
+                                this@LoginActivity,
                                 "Credenciales incorrectas",
                                 Toast.LENGTH_SHORT
                             ).show()
