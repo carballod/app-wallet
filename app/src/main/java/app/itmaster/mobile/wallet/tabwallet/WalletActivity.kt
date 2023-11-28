@@ -1,12 +1,11 @@
-package app.itmaster.mobile.wallet
+package app.itmaster.mobile.wallet.tabwallet
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ArrayAdapter
-import android.widget.AutoCompleteTextView
 import android.widget.Button
-import android.widget.EditText
 import android.widget.Spinner
+import app.itmaster.mobile.wallet.R
 import com.google.android.material.textfield.TextInputLayout
 
 class WalletActivity : AppCompatActivity() {
@@ -27,10 +26,6 @@ class WalletActivity : AppCompatActivity() {
         spinnerCurrency.adapter = adapter
 
         btnSave.setOnClickListener {
-            val name = lblName.editText?.text.toString()
-            val amount = lblAmount.editText?.text.toString().toDoubleOrNull()
-            val currency = spinnerCurrency.selectedItem.toString()
-
         }
 
     }

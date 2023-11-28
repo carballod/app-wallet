@@ -5,11 +5,11 @@
     android:layout_height="match_parent"
     tools:context=".fragments.WalletsFragment">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Pantalla actual Wallets"
+    <androidx.recyclerview.widget.RecyclerView
 
+        android:id="@+id/recycler_fragment_wallet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         />
 
 </FrameLayout>

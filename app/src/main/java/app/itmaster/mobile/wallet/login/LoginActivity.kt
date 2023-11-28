@@ -1,4 +1,4 @@
-package app.itmaster.mobile.wallet
+package app.itmaster.mobile.wallet.login
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,13 +6,14 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import app.itmaster.mobile.wallet.HomeActivity
+import app.itmaster.mobile.wallet.R
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
-import app.itmaster.mobile.wallet.repository.AuthRepository
 
 class LoginActivity : AppCompatActivity() {
 
-    private val authRepository = AuthRepository()
+    private val authRepository = Auth()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
