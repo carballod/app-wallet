@@ -4,13 +4,14 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.view.*
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import app.itmaster.mobile.wallet.R
 import app.itmaster.mobile.wallet.tabwallet.Wallet
-import app.itmaster.mobile.wallet.tabwallet.WalletActivity
+import app.itmaster.mobile.wallet.tabwallet.FormWalletActivity
 import app.itmaster.mobile.wallet.tabwallet.adapter.WalletAdapter
 import app.itmaster.mobile.wallet.tabwallet.database.WalletDatabase
 import kotlinx.coroutines.launch
@@ -63,7 +64,7 @@ class WalletsFragment : Fragment() {
         return when (item.itemId) {
             R.id.action_new_wallet -> {
                 startActivityForResult(
-                    Intent(requireContext(), WalletActivity::class.java),
+                    Intent(requireContext(), FormWalletActivity::class.java),
                     REQUEST_CODE_ADD_WALLET
                 )
                 true

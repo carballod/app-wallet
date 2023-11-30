@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="50dp"
-    tools:context=".tabwallet.WalletActivity">
+    tools:context=".tabwallet.FormWalletActivity">
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/wallet_lbl_name"
@@ -42,10 +42,26 @@
         android:layout_marginTop="25dp"
         android:hint="Currency">
 
-        <com.google.android.material.textfield.TextInputEditText
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            />
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="Select Currency"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="18sp" />
+
+            <Spinner
+                android:id="@+id/wallet_spinner_currency"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp" />
+
+        </LinearLayout>
 
     </com.google.android.material.textfield.TextInputLayout>
 
