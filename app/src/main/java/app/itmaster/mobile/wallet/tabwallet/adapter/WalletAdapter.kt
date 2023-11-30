@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import app.itmaster.mobile.wallet.R
 import app.itmaster.mobile.wallet.tabwallet.Wallet
 
-class WalletAdapter(private val walletList: List<Wallet>) : RecyclerView.Adapter<WalletViewHolder>() {
+class WalletAdapter(private var walletList: List<Wallet>) : RecyclerView.Adapter<WalletViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): WalletViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
@@ -20,6 +20,11 @@ class WalletAdapter(private val walletList: List<Wallet>) : RecyclerView.Adapter
     override fun onBindViewHolder(holder: WalletViewHolder, position: Int) {
         val item = walletList[position]
         holder.render(item)
+    }
+
+    fun updateWallets(newWalletList: List<Wallet>) {
+        walletList = newWalletList
+        notifyDataSetChanged()
     }
 
 }

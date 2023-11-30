@@ -17,7 +17,7 @@ class WalletViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     fun render(walletModel: Wallet) {
         tvName.text = walletModel.name
         tvAmount.text = walletModel.amount.toString()
-        tvCurrency.text = walletModel.currency.joinToString(", ")
+        tvCurrency.text = walletModel.currency
     }
 
 }
