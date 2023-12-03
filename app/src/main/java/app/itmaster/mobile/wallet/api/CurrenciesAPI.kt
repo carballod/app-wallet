@@ -10,9 +10,12 @@ import java.io.IOException
 
 class CurrenciesAPI {
 
-    fun fetchData(callback: (String?) -> Unit) {
+    companion object {
+        const val URL_DOLAR = "https://api.bluelytics.com.ar/v2/latest"
+        const val URL_BTC = "https://cex.io/api/tickers/BTC/USD"
+    }
 
-        val url = "https://api.bluelytics.com.ar/v2/latest"
+    fun fetchExchangeRates(url: String, callback: (String?) -> Unit) {
         val client = OkHttpClient()
         val request = Request.Builder()
             .url(url)
@@ -21,7 +24,6 @@ class CurrenciesAPI {
         // Realizar la solicitud de manera asíncrona
         client.newCall(request).enqueue(object : Callback {
             override fun onFailure(call: Call, e: IOException) {
-                // Manejar la falla de la solicitud
                 e.printStackTrace()
                 callback(null)
             }
@@ -33,4 +35,5 @@ class CurrenciesAPI {
         })
     }
 }
+
 
