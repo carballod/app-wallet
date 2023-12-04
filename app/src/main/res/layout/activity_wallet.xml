@@ -11,7 +11,7 @@
         android:id="@+id/wallet_lbl_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Name">
+        android:hint="@string/name">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -25,7 +25,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
-        android:hint="Amount">
+        android:hint="@string/amount">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -40,7 +40,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
-        android:hint="Currency">
+        android:hint="@string/currency">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -51,7 +51,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
-                android:text="Select Currency"
+                android:text="@string/select_currency"
                 android:textColor="@android:color/darker_gray"
                 android:textSize="18sp" />
 
@@ -72,7 +72,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="right"
         android:layout_marginTop="30dp"
-        android:text="Save"
+        android:text="@string/save"
         android:textSize="20sp" />
 
 
