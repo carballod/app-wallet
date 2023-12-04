@@ -44,6 +44,7 @@ class InfoFragment : Fragment() {
                 if (responseData != null) {
                     updateValuesUSD(valueBlueBuy, "blue", "value_buy", responseData)
                     updateValuesUSD(valueBlueSell, "blue", "value_sell", responseData)
+                    updateValuesUSD(valueOfficialBuy, "oficial", "value_buy", responseData)
                     updateValuesUSD(valueOfficialSell, "oficial", "value_sell", responseData)
                 } else {
                     Log.e("InfoFragment", "Error al procesar la respuesta del servidor")
