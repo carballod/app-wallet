@@ -47,7 +47,6 @@
         android:layout_width="127dp"
         android:layout_height="52dp"
         android:layout_marginTop="476dp"
-        android:onClick="onRefreshButtonClick"
         android:text="Refresh"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"

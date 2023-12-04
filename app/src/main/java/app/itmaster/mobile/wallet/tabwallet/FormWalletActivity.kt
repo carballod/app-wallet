@@ -29,7 +29,7 @@ class FormWalletActivity : AppCompatActivity() {
 
         // Spinner
         val spinnerCurrency: Spinner = findViewById(R.id.wallet_spinner_currency)
-        val currencyOptions = arrayOf("USD", "BTC", "ARGS")
+        val currencyOptions = arrayOf("USD", "BTC", "ARS")
         val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, currencyOptions)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spinnerCurrency.adapter = adapter

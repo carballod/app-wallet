@@ -15,8 +15,7 @@ interface WalletDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insert(wallet: Wallet)
 
-    @Query("SELECT SUM(amount) FROM wallet_table WHERE currency = 'USD'")
-    suspend fun getTotalAmountInUSD(): Double
-
+    @Query("SELECT COALESCE(SUM(amount), 0.0) FROM wallet_table WHERE currency = :selectedCurrency")
+    suspend fun getTotalAmount(selectedCurrency: String): Double
 
 }

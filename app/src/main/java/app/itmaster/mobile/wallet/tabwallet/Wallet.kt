@@ -10,6 +10,6 @@ import androidx.room.PrimaryKey
 data class Wallet (
     @PrimaryKey(autoGenerate = true) val id: Long = 0,
     @ColumnInfo(name = "name") val name: String,
-    @ColumnInfo(name = "amount") val amount: Double,
-    @ColumnInfo(name = "currency") val currency: String
+    @ColumnInfo(name = "amount") val amount: Double = 0.0,
+    @ColumnInfo(name = "currency") val currency: String = "USD"
 )
